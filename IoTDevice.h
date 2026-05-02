@@ -16,7 +16,7 @@ public:
     void turnOff(){
         is_on= false;
     }
-    bool isOn() const{
+    virtual bool isOn() const{
         return is_on;
     }
     int getEnergy() const{
