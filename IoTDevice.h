@@ -4,19 +4,22 @@
 
 #ifndef KURSPROJECT_IOTDEVICE_H
 #define KURSPROJECT_IOTDEVICE_H
+#include <string>
 class IoTDevice{
 protected:
     bool is_on = true;
     int power_consumption;
     int energy_consumed = 0;
+    std::string name;
 public:
-    IoTDevice(int power): power_consumption(power){}
+    IoTDevice(std::string name,int power)
+        : name(name), power_consumption(power){}
     virtual ~IoTDevice(){}
     virtual void update()=0;
-    void turnOff(){
+    virtual void turnOff(){
         is_on= false;
     }
-    bool isOn() const{
+    virtual bool isOn() const{
         return is_on;
     }
     int getEnergy() const{
