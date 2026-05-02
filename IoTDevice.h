@@ -9,6 +9,7 @@ protected:
     bool is_on = true;
     int power_consumption;
     int energy_consumed = 0;
+    std::string_name;
 public:
     IoTDevice(int power): power_consumption(power){}
     virtual ~IoTDevice(){}
