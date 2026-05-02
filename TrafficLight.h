@@ -4,14 +4,19 @@
 
 #ifndef KURSPROJECT_TRAFFICLIGHT_H
 #define KURSPROJECT_TRAFFICLIGHT_H
-#include "iotdevice.h"
+#include "IoTDevice.h"
 #include <string>
 
 class TrafficLight: public IoTDevice{
 private:
     bool isRed;
 public:
-    TrafficLight(std:: string name);
+    TrafficLight(std::string name):
+        IoTDevice(name,20)
+    {
+        isRed=true;
+    }
+
     void update() override;
     void turnOff() override;
     bool isOn() const  override;
