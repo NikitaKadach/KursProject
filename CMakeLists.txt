@@ -9,4 +9,9 @@ add_executable(KursProject
         IoTDevice.h
         main.cpp
         HUB2.cpp
-        HUB2.h)
+        HUB2.h
+        AirSensor.cpp
+        AirSensor.h
+        AirSensor.h
+        AirSensor.h
+        AirSensor.cpp)
