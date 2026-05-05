@@ -14,4 +14,6 @@ add_executable(KursProject
         AirSensor.h
         AirSensor.h
         AirSensor.h
-        AirSensor.cpp)
+        AirSensor.cpp
+        Power_Grid.cpp
+        Power_Grid.h)

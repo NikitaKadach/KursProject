@@ -1,0 +1,20 @@
+//
+// Created by matvl on 05.05.2026.
+//
+
+#ifndef KURSPROJECT_POWERGRID_H
+#define KURSPROJECT_POWERGRID_H
+
+#include <vector>
+#include <memory>
+#include "IoTDevice.h"
+
+class PowerGrid {
+private:
+    int limit = 100;
+
+public:
+    void checkLimits(const std::vector<std::shared_ptr<IoTDevice>>& devices);
+};
+
+#endif //KURSPROJECT_POWERGRID_H
