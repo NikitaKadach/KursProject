@@ -2,24 +2,24 @@
 // Created by matvl on 05.05.2026.
 //
 
-#include "PowerGrid.h"
+#include "Power_Grid.h"
 #include <iostream>
 
 void PowerGrid::checkLimits(const std::vector<std::shared_ptr<IoTDevice>>& devices) {
     int total = 0;
     for (auto& dev : devices) {
-        total += dev->getEnergy();
+        if (dev->isOn()) total += dev->getEnergy();
     }
 
-    std::cout << "Общее потребление: " << total << " Ватт" << std::endl;
+    std::cout << "  [Сеть] Суммарное потребление: " << total << " Вт" << std::endl;
 
-    while (total > limit) {
+    if (total > limit) {
+        std::cout << "  [Сеть] ПЕРЕГРУЗКА! Отключаем устройства..." << std::endl;
         for (auto& dev : devices) {
-            if (dev->isOn()) {
+            if (dev->isOn() && total > limit) {
                 dev->turnOff();
                 total -= dev->getEnergy();
-                std::cout << "Устройство отключено, потребление: " << total << " Ватт" << std::endl;
-                break;
+                std::cout << "  [Сеть] Устройство отключено, осталось: " << total << " Вт" << std::endl;
             }
         }
     }

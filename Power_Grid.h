@@ -11,7 +11,7 @@
 
 class PowerGrid {
 private:
-    int limit = 100;
+    int limit = 500;
 
 public:
     void checkLimits(const std::vector<std::shared_ptr<IoTDevice>>& devices);
