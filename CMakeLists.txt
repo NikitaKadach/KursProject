@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0)
+cmake_minimum_required(VERSION 3.14)
 project(KursProject)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -12,8 +12,7 @@ add_executable(KursProject
         HUB2.h
         AirSensor.cpp
         AirSensor.h
-        AirSensor.h
-        AirSensor.h
-        AirSensor.cpp
+        TrafficLight.cpp
+        TrafficLight.h
         Power_Grid.cpp
         Power_Grid.h)

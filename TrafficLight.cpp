@@ -2,17 +2,20 @@
 // Created by Artemiy on 2.05.26.
 //
 #include <iostream>
-#include "Trafficlight.h"
+#include "TrafficLight.h"
 using namespace std;
-void TrafficLight::update(){
+
+void TrafficLight::update() {
     isRed = !isRed;
-    cout << "Светофор" << name << ": "
-         <<(isRed ? "Красный": "Зеленый ")<<endl;
+    cout << "[" << name << "] "
+         << (isRed ? "Красный" : "Зеленый") << endl;
     consumeEnergy();
 }
-void TrafficLight::turnOff() {
 
+void TrafficLight::turnOff() {
+    is_on = false;
 }
+
 bool TrafficLight::isOn() const {
-    return true;
+    return is_on;
 }

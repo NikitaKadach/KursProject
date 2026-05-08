@@ -9,7 +9,7 @@
 
 class AirSensor : public IoTDevice {
 public:
-    AirSensor() : IoTDevice(15) {}
+    explicit AirSensor(std::string name) : IoTDevice(std::move(name), 15) {}
     void update() override;
 };
 
